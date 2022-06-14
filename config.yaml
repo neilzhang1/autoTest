@@ -1,0 +1,9 @@
+log:
+ name: abs
+ filename: logs/abs.log
+ debug: false
+testdata:
+ file: testdata/absdata.xlsx
+report:
+ filename: testreport/testreport.html
+ description: Abs测试报告

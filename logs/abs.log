@@ -1,0 +1,28 @@
+2022-06-13 00:05:00,042 - abs - ERROR - 用例负数测试失败
+Traceback (most recent call last):
+  File "C:\Code\autoTest\testcases\test_abs.py", line 40, in test_abs
+    self.assertEqual(res, case['expect'])  #断言
+  File "C:\Python\lib\unittest\case.py", line 837, in assertEqual
+    assertion_func(first, second, msg=msg)
+  File "C:\Python\lib\unittest\case.py", line 830, in _baseAssertEqual
+    raise self.failureException(msg)
+AssertionError: 1 != 2
+2022-06-13 00:25:26,143 - Abs测试报告 - INFO - ==========start==========
+2022-06-13 00:25:26,143 - Abs测试报告 - INFO - 用例正数开始测试
+2022-06-13 00:25:26,143 - Abs测试报告 - INFO - 用例正数测试通过
+2022-06-13 00:25:26,143 - Abs测试报告 - INFO - 用例正数执行结束
+2022-06-13 00:25:26,143 - Abs测试报告 - INFO - 用例负数开始测试
+2022-06-13 00:25:26,143 - Abs测试报告 - ERROR - 用例负数测试失败
+Traceback (most recent call last):
+  File "C:\Code\autoTest\testcases\test_abs.py", line 42, in test_abs
+    self.assertEqual(res, case['expect'])  #断言
+  File "C:\Python\lib\unittest\case.py", line 837, in assertEqual
+    assertion_func(first, second, msg=msg)
+  File "C:\Python\lib\unittest\case.py", line 830, in _baseAssertEqual
+    raise self.failureException(msg)
+AssertionError: 1 != 2
+2022-06-13 00:25:26,145 - Abs测试报告 - INFO - 用例负数执行结束
+2022-06-13 00:25:26,146 - Abs测试报告 - INFO - 用例零开始测试
+2022-06-13 00:25:26,146 - Abs测试报告 - INFO - 用例零测试通过
+2022-06-13 00:25:26,146 - Abs测试报告 - INFO - 用例零执行结束
+2022-06-13 00:25:26,146 - Abs测试报告 - INFO - **********end**********
