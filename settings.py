@@ -8,7 +8,7 @@
 LOG_CONFIG= {
     'name': 'Abs测试报告',
     'filename': 'logs/abs.log',
-    'debug': True
+    'debug': False
 }
 
 # 测试数据配置
