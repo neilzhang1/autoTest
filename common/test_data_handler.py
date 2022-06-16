@@ -8,6 +8,8 @@
 """
 import json
 from openpyxl import load_workbook
+from faker import Faker
+from common import db
 
 def get_test_data_from_excel(file,sheet_name):
     """
@@ -40,4 +42,20 @@ def get_test_data_from_excel(file,sheet_name):
     return data
 
 
+def generate_no_use_phone(sql='select telephone from userInfo where telephone = {} '):
+    """
+    随机生成没有使用过的手机号码
+    """
+    fk = Faker(locale='zh_CN')
 
+    while True:
+        phone = fk.phone_number()
+        sql = sql.format(phone)
+        if not db.exist(sql):
+            return phone
+
+
+
+if __name__ == '__main__':
+    res = generate_no_use_phone()
+    print(res)

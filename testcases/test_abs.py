@@ -7,18 +7,16 @@ import unittest
 from ddt import ddt,data
 from common.test_data_handler import get_test_data_from_excel
 from common import logger
-from common.config_handler import get_config
+from common import db
+
 import settings
 
-
-# cases = get_test_data_from_excel('testdata/absdata.xlsx', 'Sheet1')
-config = get_config('config.yaml')
-# cases = get_test_data_from_excel(config['testdata']['file'], 'Sheet1')
 cases = get_test_data_from_excel(settings.TEST_DATA_CONFIG, 'Sheet1')
 
 @ddt
 class TestAbs(unittest.TestCase):
     logger = logger  #获取日志器
+    db = db
 
     @classmethod
     def setUpClass(cls) -> None:
@@ -45,9 +43,18 @@ class TestAbs(unittest.TestCase):
             raise e #抛出异常
         else:
             self.logger.info('用例{}测试通过'.format(case['title']))  #输出日志
-        finally:
-            self.logger.info('用例{}执行结束'.format(case['title']))  #输出日志
 
+
+        if case['sql']:
+            try:
+                db_res = self.db.exist(case['sql'])
+                self.assertTrue(db_res)
+            except Exception as e:
+                self.logger.exception('数据库断言失败')
+                self.logger.debug('执行的SQL是{}'.format(case['sql']))
+                raise e
+            else:
+                self.logger.info('数据库断言成功')
 
 
 
