@@ -4,6 +4,7 @@
 # @Author  : Neil
 # @File    : report_handler.py
 # @Software: PyCharm
+import os
 from datetime import datetime
 from  BeautifulReport import BeautifulReport
 from common.HTMLTestRunnerNew import HTMLTestRunner
@@ -28,6 +29,6 @@ def report(case, filename, report_dir, title=None, description=None,tester=None,
         br = BeautifulReport(case)
         br.report(description=description, filename=filename, report_dir=report_dir)
     else:
-        with open(report_dir + filename) as f:
+        with open(os.path.join(report_dir + '/' + filename), 'wb') as f:
             runner = HTMLTestRunner(f,title=title,description=description,tester=tester)
             runner.run(case)

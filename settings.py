@@ -4,8 +4,19 @@
 # @File : settings.py 
 # @Software: PyCharm
 import os
+
+#项目路径
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))  #获取项目根目录
 
+#项目域名
+PROJECT_HOST = 'http://api.lemonban.com/futureloan'
+
+#接口路径
+INTERFACES = {
+    'register': '/member/register',
+    'login': '/member/login',
+    'recharge': '/member/recharge'
+}
 
 # 日志配置
 LOG_CONFIG= {
@@ -15,7 +26,7 @@ LOG_CONFIG= {
 }
 
 # 测试数据配置
-TEST_DATA_CONFIG = os.path.join(BASE_DIR, 'testdata/absdata.xlsx')
+TEST_DATA_CONFIG = os.path.join(BASE_DIR, 'testdata/testcases.xlsx')
 
 # 测试报告配置
 REPORT_CONFIG = {
@@ -36,3 +47,8 @@ DB_CONFIG = {
     'autocommit':True  #自动提交事务，防止重复读
 }
 
+# 用户数据
+TEST_USER = {
+    'mobile_phone':'15601665487',
+    'pwd':'12345678'
+}

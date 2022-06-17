@@ -32,24 +32,34 @@ def get_test_data_from_excel(file,sheet_name):
         row_data = {}
         for j in range(1,column+1):
             #获取对应列的键
-            key = keys[j-1]
-            value = sheet.cell(i,j).value
-            row_data[key] = value
+            # key = keys[j-1]
+            # value = sheet.cell(i,j).value
+            # row_data[key] = value
+            row_data[keys[j-1]] = sheet.cell(i,j).value
         #把部分数据转换为python对象
-        # row_data['数据'] = json.loads(row_data['数据'])
+        # try:
+        #     row_data['request'] = json.loads(row_data['request'])
+        #     row_data['expect'] = json.loads(row_data['expect'])
+        # except json.decoder.JSONDecodeError:
+        #     raise ValueError('用例数据json格式错误')
         #把每一行的字典添加到列表中
         data.append(row_data)
     return data
 
+def generate_phone():
+    """
+    随机生成手机号
+    """
+    fk = Faker(locale='zh_CN')
+    return fk.phone_number()
 
 def generate_no_use_phone(sql='select telephone from userInfo where telephone = {} '):
     """
     随机生成没有使用过的手机号码
     """
-    fk = Faker(locale='zh_CN')
 
     while True:
-        phone = fk.phone_number()
+        phone = generate_phone()
         sql = sql.format(phone)
         if not db.exist(sql):
             return phone
@@ -57,5 +67,5 @@ def generate_no_use_phone(sql='select telephone from userInfo where telephone = 
 
 
 if __name__ == '__main__':
-    res = generate_no_use_phone()
-    print(res)
+    res = get_test_data_from_excel('../testdata/testcases.xlsx','register')
+    print(type(res[1]['request']))
