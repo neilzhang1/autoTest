@@ -7,15 +7,16 @@
 import json
 import unittest
 
-from ddt import ddt,data
+from ddt import ddt, data
 
 import settings
-from common import logger,db
-from common.fixture import register,login
-from common.test_data_handler import get_test_data_from_excel,generate_no_use_phone
+from common import logger, db
+from common.fixture import register, login
+from common.test_data_handler import get_test_data_from_excel, generate_no_use_phone
 from common.make_requests import send_http_request
 
-cases = get_test_data_from_excel(settings.TEST_DATA_CONFIG,'recharge')
+cases = get_test_data_from_excel(settings.TEST_DATA_CONFIG, 'recharge')
+
 
 @ddt
 class TestRecharge(unittest.TestCase):
@@ -32,13 +33,13 @@ class TestRecharge(unittest.TestCase):
         # 注册
         mobile_phone = settings.TEST_USER['mobile_phone']
         pwd = settings.TEST_USER['pwd']
-        if not register(mobile_phone=mobile_phone,pwd=pwd):
+        if not register(mobile_phone=mobile_phone, pwd=pwd):
             cls.logger.error('注册用户{}失败'.format(mobile_phone))
             raise ValueError('注册用户{}失败'.format(mobile_phone))
         cls.logger.info('注册用户{}成功'.format(mobile_phone))
 
         # 登录
-        data = login(mobile_phone=mobile_phone,pwd=pwd)
+        data = login(mobile_phone=mobile_phone, pwd=pwd)
         if data is None:
             cls.logger.error('登录用户{}失败'.format(mobile_phone))
             raise ValueError('登录用户{}失败'.format(mobile_phone))
@@ -52,13 +53,13 @@ class TestRecharge(unittest.TestCase):
         cls.logger.info('**********充值接口测试结束**********')
 
     @data(*cases)
-    def test_recharge(self,case):
+    def test_recharge(self, case):
         self.logger.info('用例【{}】开始测试'.format(case['title']))
 
         # 处理测试数据
         # 替换数据
-        case['request'] = case['request'].replace('#member_id#',str(self.member_id))
-        case['request'] = case['request'].replace('#token#',self.token)
+        case['request'] = case['request'].replace('#member_id#', str(self.member_id))
+        case['request'] = case['request'].replace('#token#', self.token)
 
         # 将字符串转换为json
         case['request'] = json.loads(case['request'])

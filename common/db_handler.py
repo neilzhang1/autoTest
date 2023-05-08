@@ -10,7 +10,7 @@ class DB:
 
     def __init__(self,db_config):
         #创建连接
-        self.conn = pymysql.connect(**db_config)
+        self.conn = pymysql.Connect(**db_config)
 
     def __del__(self):
         #自动关闭连接
