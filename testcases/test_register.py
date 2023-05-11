@@ -11,27 +11,30 @@ from common import logger
 from common import db
 from common.make_requests import send_http_request
 import settings
+from testcases.base_test import BaseTest
 
 cases = get_test_data_from_excel(settings.TEST_DATA_CONFIG, 'register')
 
 @ddt
-class TestRegister(unittest.TestCase):
+class TestRegister(BaseTest):
     """
     测试注册接口
     """
-    logger = logger
-    db = db
-
-    @classmethod
-    def setUpClass(cls) -> None:
-        cls.logger.info('----------注册接口测试开始----------')
-
-    @classmethod
-    def tearDownClass(cls) -> None:
-        cls.logger.info('**********注册接口测试结束**********')
+    # logger = logger
+    # db = db
+    #
+    name = '注册'
+    # @classmethod
+    # def setUpClass(cls) -> None:
+    #     cls.logger.info('----------注册接口测试开始----------')
+    #
+    # @classmethod
+    # def tearDownClass(cls) -> None:
+    #     cls.logger.info('**********注册接口测试结束**********')
 
     @data(*cases)
     def test_register(self,case):
+
         self.logger.info('用例【{}】开始测试'.format(case['title']))
 
         #测试数据处理
@@ -61,7 +64,7 @@ class TestRegister(unittest.TestCase):
         response_data = response.json()
         # 状态码断言
         try:
-            self.assertEqual(200,response.status_code)
+            self.assertEqual(case['status_code'],response.status_code)
         except AssertionError as e:
             self.logger.exception('状态码断言失败')
             raise e

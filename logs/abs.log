@@ -1,0 +1,538 @@
+2023-05-11 15:47:45,013 - Abs测试报告 - INFO - ==========start==========
+2023-05-11 15:47:45,014 - Abs测试报告 - INFO - 用例加法开始测试
+2023-05-11 15:47:45,014 - Abs测试报告 - INFO - 用例加法测试通过
+2023-05-11 15:47:45,014 - Abs测试报告 - INFO - 用例减法开始测试
+2023-05-11 15:47:45,014 - Abs测试报告 - INFO - 用例减法测试通过
+2023-05-11 15:47:45,014 - Abs测试报告 - INFO - 用例乘法开始测试
+2023-05-11 15:47:45,014 - Abs测试报告 - INFO - 用例乘法测试通过
+2023-05-11 15:47:45,014 - Abs测试报告 - INFO - 用例除法开始测试
+2023-05-11 15:47:45,014 - Abs测试报告 - INFO - 用例除法测试通过
+2023-05-11 15:47:45,014 - Abs测试报告 - INFO - **********end**********
+2023-05-11 15:47:45,014 - Abs测试报告 - INFO - ----------充值接口测试开始----------
+2023-05-11 15:47:45,173 - Abs测试报告 - INFO - 注册成功
+2023-05-11 15:47:45,173 - Abs测试报告 - INFO - 注册用户15601665487成功
+2023-05-11 15:47:45,277 - Abs测试报告 - INFO - 登录成功
+2023-05-11 15:47:45,278 - Abs测试报告 - INFO - 用例【充值成功-整数】开始测试
+2023-05-11 15:47:45,278 - Abs测试报告 - DEBUG - url:http://api.lemonban.com/futureloan/member/recharge
+2023-05-11 15:47:45,278 - Abs测试报告 - DEBUG - method:post
+2023-05-11 15:47:45,278 - Abs测试报告 - DEBUG - request:{'headers': {'X-Lemonban-Media-Type': 'lemonban.v2', 'Authorization': 'BearereyJhbGciOiJIUzUxMiJ9.eyJtZW1iZXJfaWQiOjEwNzk1MSwiZXhwIjoxNjgzNzkxNTY1fQ.ctp16DxgJ7DKHlQCDeUs123cUVqZL_ZJJ1l7ALJWtnRJ_1sXQrt7dn8eImsFidotG8cFLQvowFaANeH2sIND2A'}, 'json': {'member_id': 107951, 'amount': 666}}
+2023-05-11 15:47:45,338 - Abs测试报告 - ERROR - 请求结果断言失败
+Traceback (most recent call last):
+  File "D:\learnpython\autoTest\testcases\test_recharge.py", line 91, in test_recharge
+    self.assertEqual(case['expect'], res)
+  File "C:\Program Files\Python310\lib\unittest\case.py", line 845, in assertEqual
+    assertion_func(first, second, msg=msg)
+  File "C:\Program Files\Python310\lib\unittest\case.py", line 1144, in assertDictEqual
+    self.fail(self._formatMessage(msg, standardMsg))
+  File "C:\Program Files\Python310\lib\unittest\case.py", line 675, in fail
+    raise self.failureException(msg)
+AssertionError: {'code': '0', 'msg': 'OK'} != {'code': 1003, 'msg': '无法解析的JSON值，请检查token或Authorization请求头'}
+- {'code': '0', 'msg': 'OK'}
++ {'code': 1003, 'msg': '无法解析的JSON值，请检查token或Authorization请求头'}
+2023-05-11 15:47:45,338 - Abs测试报告 - DEBUG - 期望数据:{'code': '0', 'msg': 'OK'}
+2023-05-11 15:47:45,338 - Abs测试报告 - DEBUG - 实际结果:{'code': 1003, 'msg': '无法解析的JSON值，请检查token或Authorization请求头'}
+2023-05-11 15:47:45,340 - Abs测试报告 - DEBUG - 响应结果:{'code': 1003, 'copyright': 'Copyright 柠檬班 © 2017-2020 湖南省零檬信息技术有限公司 All Rights Reserved', 'msg': '无法解析的JSON值，请检查token或Authorization请求头'}
+2023-05-11 15:47:45,340 - Abs测试报告 - INFO - 用例【充值成功-一位小数】开始测试
+2023-05-11 15:47:45,340 - Abs测试报告 - DEBUG - url:http://api.lemonban.com/futureloan/member/recharge
+2023-05-11 15:47:45,340 - Abs测试报告 - DEBUG - method:post
+2023-05-11 15:47:45,340 - Abs测试报告 - DEBUG - request:{'headers': {'X-Lemonban-Media-Type': 'lemonban.v2', 'Authorization': 'BearereyJhbGciOiJIUzUxMiJ9.eyJtZW1iZXJfaWQiOjEwNzk1MSwiZXhwIjoxNjgzNzkxNTY1fQ.ctp16DxgJ7DKHlQCDeUs123cUVqZL_ZJJ1l7ALJWtnRJ_1sXQrt7dn8eImsFidotG8cFLQvowFaANeH2sIND2A'}, 'json': {'member_id': 107951, 'amount': 666.6}}
+2023-05-11 15:47:45,411 - Abs测试报告 - ERROR - 请求结果断言失败
+Traceback (most recent call last):
+  File "D:\learnpython\autoTest\testcases\test_recharge.py", line 91, in test_recharge
+    self.assertEqual(case['expect'], res)
+  File "C:\Program Files\Python310\lib\unittest\case.py", line 845, in assertEqual
+    assertion_func(first, second, msg=msg)
+  File "C:\Program Files\Python310\lib\unittest\case.py", line 1144, in assertDictEqual
+    self.fail(self._formatMessage(msg, standardMsg))
+  File "C:\Program Files\Python310\lib\unittest\case.py", line 675, in fail
+    raise self.failureException(msg)
+AssertionError: {'code': '0', 'msg': 'OK'} != {'code': 1003, 'msg': '无法解析的JSON值，请检查token或Authorization请求头'}
+- {'code': '0', 'msg': 'OK'}
++ {'code': 1003, 'msg': '无法解析的JSON值，请检查token或Authorization请求头'}
+2023-05-11 15:47:45,412 - Abs测试报告 - DEBUG - 期望数据:{'code': '0', 'msg': 'OK'}
+2023-05-11 15:47:45,412 - Abs测试报告 - DEBUG - 实际结果:{'code': 1003, 'msg': '无法解析的JSON值，请检查token或Authorization请求头'}
+2023-05-11 15:47:45,412 - Abs测试报告 - DEBUG - 响应结果:{'code': 1003, 'copyright': 'Copyright 柠檬班 © 2017-2020 湖南省零檬信息技术有限公司 All Rights Reserved', 'msg': '无法解析的JSON值，请检查token或Authorization请求头'}
+2023-05-11 15:47:45,412 - Abs测试报告 - INFO - 用例【充值成功-两位小数】开始测试
+2023-05-11 15:47:45,412 - Abs测试报告 - DEBUG - url:http://api.lemonban.com/futureloan/member/recharge
+2023-05-11 15:47:45,412 - Abs测试报告 - DEBUG - method:post
+2023-05-11 15:47:45,412 - Abs测试报告 - DEBUG - request:{'headers': {'X-Lemonban-Media-Type': 'lemonban.v2', 'Authorization': 'BearereyJhbGciOiJIUzUxMiJ9.eyJtZW1iZXJfaWQiOjEwNzk1MSwiZXhwIjoxNjgzNzkxNTY1fQ.ctp16DxgJ7DKHlQCDeUs123cUVqZL_ZJJ1l7ALJWtnRJ_1sXQrt7dn8eImsFidotG8cFLQvowFaANeH2sIND2A'}, 'json': {'member_id': 107951, 'amount': 666.66}}
+2023-05-11 15:47:45,487 - Abs测试报告 - ERROR - 请求结果断言失败
+Traceback (most recent call last):
+  File "D:\learnpython\autoTest\testcases\test_recharge.py", line 91, in test_recharge
+    self.assertEqual(case['expect'], res)
+  File "C:\Program Files\Python310\lib\unittest\case.py", line 845, in assertEqual
+    assertion_func(first, second, msg=msg)
+  File "C:\Program Files\Python310\lib\unittest\case.py", line 1144, in assertDictEqual
+    self.fail(self._formatMessage(msg, standardMsg))
+  File "C:\Program Files\Python310\lib\unittest\case.py", line 675, in fail
+    raise self.failureException(msg)
+AssertionError: {'code': '0', 'msg': 'OK'} != {'code': 1003, 'msg': '无法解析的JSON值，请检查token或Authorization请求头'}
+- {'code': '0', 'msg': 'OK'}
++ {'code': 1003, 'msg': '无法解析的JSON值，请检查token或Authorization请求头'}
+2023-05-11 15:47:45,488 - Abs测试报告 - DEBUG - 期望数据:{'code': '0', 'msg': 'OK'}
+2023-05-11 15:47:45,488 - Abs测试报告 - DEBUG - 实际结果:{'code': 1003, 'msg': '无法解析的JSON值，请检查token或Authorization请求头'}
+2023-05-11 15:47:45,488 - Abs测试报告 - DEBUG - 响应结果:{'code': 1003, 'copyright': 'Copyright 柠檬班 © 2017-2020 湖南省零檬信息技术有限公司 All Rights Reserved', 'msg': '无法解析的JSON值，请检查token或Authorization请求头'}
+2023-05-11 15:47:45,488 - Abs测试报告 - INFO - **********充值接口测试结束**********
+2023-05-11 15:47:45,488 - Abs测试报告 - INFO - ----------注册接口测试开始----------
+2023-05-11 15:47:45,488 - Abs测试报告 - INFO - 用例【注册成功-不带昵称和类型】开始测试
+2023-05-11 15:47:45,488 - Abs测试报告 - DEBUG - url:http://api.lemonban.com/futureloan/member/register
+2023-05-11 15:47:45,488 - Abs测试报告 - DEBUG - method:post
+2023-05-11 15:47:45,488 - Abs测试报告 - DEBUG - request:{'headers': {'X-Lemonban-Media-Type': 'lemonban.v2'}, 'json': {'mobile_phone': '18888888888', 'pwd': '12345678'}}
+2023-05-11 15:47:45,594 - Abs测试报告 - ERROR - 请求结果断言失败
+Traceback (most recent call last):
+  File "D:\learnpython\autoTest\testcases\test_register.py", line 72, in test_register
+    self.assertEqual(case['expect'], res)
+  File "C:\Program Files\Python310\lib\unittest\case.py", line 845, in assertEqual
+    assertion_func(first, second, msg=msg)
+  File "C:\Program Files\Python310\lib\unittest\case.py", line 1144, in assertDictEqual
+    self.fail(self._formatMessage(msg, standardMsg))
+  File "C:\Program Files\Python310\lib\unittest\case.py", line 675, in fail
+    raise self.failureException(msg)
+AssertionError: {'code': '0', 'msg': 'OK'} != {'code': 2, 'msg': '账号已存在'}
+- {'code': '0', 'msg': 'OK'}
+?          ^^^          ^^
+
++ {'code': 2, 'msg': '账号已存在'}
+?          ^          ^^^^^
+
+2023-05-11 15:47:45,594 - Abs测试报告 - DEBUG - 期望数据:{'code': '0', 'msg': 'OK'}
+2023-05-11 15:47:45,595 - Abs测试报告 - DEBUG - 实际结果:{'code': 2, 'msg': '账号已存在'}
+2023-05-11 15:47:45,595 - Abs测试报告 - DEBUG - 响应结果:{'code': 2, 'msg': '账号已存在', 'data': None, 'copyright': 'Copyright 柠檬班 © 2017-2020 湖南省零檬信息技术有限公司 All Rights Reserved'}
+2023-05-11 15:47:45,595 - Abs测试报告 - INFO - 用例【注册成功-带昵称-类型为0】开始测试
+2023-05-11 15:47:45,595 - Abs测试报告 - DEBUG - url:http://api.lemonban.com/futureloan/member/register
+2023-05-11 15:47:45,595 - Abs测试报告 - DEBUG - method:post
+2023-05-11 15:47:45,595 - Abs测试报告 - DEBUG - request:{'headers': {'X-Lemonban-Media-Type': 'lemonban.v2'}, 'json': {'mobile_phone': '18888888888', 'pwd': '12345678', 'type': '0', 'reg_name': 'lemon'}}
+2023-05-11 15:47:45,700 - Abs测试报告 - ERROR - 请求结果断言失败
+Traceback (most recent call last):
+  File "D:\learnpython\autoTest\testcases\test_register.py", line 72, in test_register
+    self.assertEqual(case['expect'], res)
+  File "C:\Program Files\Python310\lib\unittest\case.py", line 845, in assertEqual
+    assertion_func(first, second, msg=msg)
+  File "C:\Program Files\Python310\lib\unittest\case.py", line 1144, in assertDictEqual
+    self.fail(self._formatMessage(msg, standardMsg))
+  File "C:\Program Files\Python310\lib\unittest\case.py", line 675, in fail
+    raise self.failureException(msg)
+AssertionError: {'code': '0', 'msg': 'OK'} != {'code': 2, 'msg': '账号已存在'}
+- {'code': '0', 'msg': 'OK'}
+?          ^^^          ^^
+
++ {'code': 2, 'msg': '账号已存在'}
+?          ^          ^^^^^
+
+2023-05-11 15:47:45,700 - Abs测试报告 - DEBUG - 期望数据:{'code': '0', 'msg': 'OK'}
+2023-05-11 15:47:45,700 - Abs测试报告 - DEBUG - 实际结果:{'code': 2, 'msg': '账号已存在'}
+2023-05-11 15:47:45,701 - Abs测试报告 - DEBUG - 响应结果:{'code': 2, 'msg': '账号已存在', 'data': None, 'copyright': 'Copyright 柠檬班 © 2017-2020 湖南省零檬信息技术有限公司 All Rights Reserved'}
+2023-05-11 15:47:45,701 - Abs测试报告 - INFO - 用例【注册成功-带昵称-类型为1】开始测试
+2023-05-11 15:47:45,701 - Abs测试报告 - DEBUG - url:http://api.lemonban.com/futureloan/member/register
+2023-05-11 15:47:45,701 - Abs测试报告 - DEBUG - method:post
+2023-05-11 15:47:45,701 - Abs测试报告 - DEBUG - request:{'headers': {'X-Lemonban-Media-Type': 'lemonban.v2'}, 'json': {'mobile_phone': '18888888888', 'pwd': '12345678', 'type': '1'}}
+2023-05-11 15:47:45,805 - Abs测试报告 - ERROR - 请求结果断言失败
+Traceback (most recent call last):
+  File "D:\learnpython\autoTest\testcases\test_register.py", line 72, in test_register
+    self.assertEqual(case['expect'], res)
+  File "C:\Program Files\Python310\lib\unittest\case.py", line 845, in assertEqual
+    assertion_func(first, second, msg=msg)
+  File "C:\Program Files\Python310\lib\unittest\case.py", line 1144, in assertDictEqual
+    self.fail(self._formatMessage(msg, standardMsg))
+  File "C:\Program Files\Python310\lib\unittest\case.py", line 675, in fail
+    raise self.failureException(msg)
+AssertionError: {'code': '0', 'msg': 'OK'} != {'code': 2, 'msg': '账号已存在'}
+- {'code': '0', 'msg': 'OK'}
+?          ^^^          ^^
+
++ {'code': 2, 'msg': '账号已存在'}
+?          ^          ^^^^^
+
+2023-05-11 15:47:45,805 - Abs测试报告 - DEBUG - 期望数据:{'code': '0', 'msg': 'OK'}
+2023-05-11 15:47:45,805 - Abs测试报告 - DEBUG - 实际结果:{'code': 2, 'msg': '账号已存在'}
+2023-05-11 15:47:45,805 - Abs测试报告 - DEBUG - 响应结果:{'code': 2, 'msg': '账号已存在', 'data': None, 'copyright': 'Copyright 柠檬班 © 2017-2020 湖南省零檬信息技术有限公司 All Rights Reserved'}
+2023-05-11 15:47:45,806 - Abs测试报告 - INFO - **********注册接口测试结束**********
+2023-05-11 16:09:00,085 - Abs测试报告 - INFO - ==========start==========
+2023-05-11 16:09:00,085 - Abs测试报告 - INFO - 用例加法开始测试
+2023-05-11 16:09:00,086 - Abs测试报告 - INFO - 用例加法测试通过
+2023-05-11 16:09:00,086 - Abs测试报告 - INFO - 用例减法开始测试
+2023-05-11 16:09:00,086 - Abs测试报告 - INFO - 用例减法测试通过
+2023-05-11 16:09:00,086 - Abs测试报告 - INFO - 用例乘法开始测试
+2023-05-11 16:09:00,086 - Abs测试报告 - INFO - 用例乘法测试通过
+2023-05-11 16:09:00,086 - Abs测试报告 - INFO - 用例除法开始测试
+2023-05-11 16:09:00,086 - Abs测试报告 - INFO - 用例除法测试通过
+2023-05-11 16:09:00,087 - Abs测试报告 - INFO - **********end**********
+2023-05-11 16:09:00,087 - Abs测试报告 - INFO - ----------充值接口测试开始----------
+2023-05-11 16:09:00,194 - Abs测试报告 - INFO - 注册成功
+2023-05-11 16:09:00,194 - Abs测试报告 - INFO - 注册用户15601665487成功
+2023-05-11 16:09:00,298 - Abs测试报告 - INFO - 登录成功
+2023-05-11 16:09:00,298 - Abs测试报告 - INFO - 用例【充值成功-整数】开始测试
+2023-05-11 16:09:00,299 - Abs测试报告 - DEBUG - url:http://api.lemonban.com/futureloan/member/recharge
+2023-05-11 16:09:00,299 - Abs测试报告 - DEBUG - method:post
+2023-05-11 16:09:00,299 - Abs测试报告 - DEBUG - request:{'headers': {'X-Lemonban-Media-Type': 'lemonban.v2', 'Authorization': 'BearereyJhbGciOiJIUzUxMiJ9.eyJtZW1iZXJfaWQiOjEwNzk1MSwiZXhwIjoxNjgzNzkyODQwfQ.kN5jkNtWrxLGMTQSiMSdUVBQQnVJeQ3IPg_jebtQJnSJfIJ5WhUv5bf6RGwa1-FcXWcELAcfwdOQi8Xkjk7m4Q'}, 'json': {'member_id': 107951, 'amount': 666}}
+2023-05-11 16:09:00,370 - Abs测试报告 - ERROR - 请求结果断言失败
+Traceback (most recent call last):
+  File "D:\learnpython\autoTest\testcases\test_recharge.py", line 91, in test_recharge
+    self.assertEqual(case['expect'], res)
+  File "C:\Program Files\Python310\lib\unittest\case.py", line 845, in assertEqual
+    assertion_func(first, second, msg=msg)
+  File "C:\Program Files\Python310\lib\unittest\case.py", line 1144, in assertDictEqual
+    self.fail(self._formatMessage(msg, standardMsg))
+  File "C:\Program Files\Python310\lib\unittest\case.py", line 675, in fail
+    raise self.failureException(msg)
+AssertionError: {'code': '0', 'msg': 'OK'} != {'code': 1003, 'msg': '无法解析的JSON值，请检查token或Authorization请求头'}
+- {'code': '0', 'msg': 'OK'}
++ {'code': 1003, 'msg': '无法解析的JSON值，请检查token或Authorization请求头'}
+2023-05-11 16:09:00,370 - Abs测试报告 - DEBUG - 期望数据:{'code': '0', 'msg': 'OK'}
+2023-05-11 16:09:00,371 - Abs测试报告 - DEBUG - 实际结果:{'code': 1003, 'msg': '无法解析的JSON值，请检查token或Authorization请求头'}
+2023-05-11 16:09:00,371 - Abs测试报告 - DEBUG - 响应结果:{'code': 1003, 'copyright': 'Copyright 柠檬班 © 2017-2020 湖南省零檬信息技术有限公司 All Rights Reserved', 'msg': '无法解析的JSON值，请检查token或Authorization请求头'}
+2023-05-11 16:09:00,371 - Abs测试报告 - INFO - 用例【充值成功-一位小数】开始测试
+2023-05-11 16:09:00,371 - Abs测试报告 - DEBUG - url:http://api.lemonban.com/futureloan/member/recharge
+2023-05-11 16:09:00,371 - Abs测试报告 - DEBUG - method:post
+2023-05-11 16:09:00,371 - Abs测试报告 - DEBUG - request:{'headers': {'X-Lemonban-Media-Type': 'lemonban.v2', 'Authorization': 'BearereyJhbGciOiJIUzUxMiJ9.eyJtZW1iZXJfaWQiOjEwNzk1MSwiZXhwIjoxNjgzNzkyODQwfQ.kN5jkNtWrxLGMTQSiMSdUVBQQnVJeQ3IPg_jebtQJnSJfIJ5WhUv5bf6RGwa1-FcXWcELAcfwdOQi8Xkjk7m4Q'}, 'json': {'member_id': 107951, 'amount': 666.6}}
+2023-05-11 16:09:00,442 - Abs测试报告 - ERROR - 请求结果断言失败
+Traceback (most recent call last):
+  File "D:\learnpython\autoTest\testcases\test_recharge.py", line 91, in test_recharge
+    self.assertEqual(case['expect'], res)
+  File "C:\Program Files\Python310\lib\unittest\case.py", line 845, in assertEqual
+    assertion_func(first, second, msg=msg)
+  File "C:\Program Files\Python310\lib\unittest\case.py", line 1144, in assertDictEqual
+    self.fail(self._formatMessage(msg, standardMsg))
+  File "C:\Program Files\Python310\lib\unittest\case.py", line 675, in fail
+    raise self.failureException(msg)
+AssertionError: {'code': '0', 'msg': 'OK'} != {'code': 1003, 'msg': '无法解析的JSON值，请检查token或Authorization请求头'}
+- {'code': '0', 'msg': 'OK'}
++ {'code': 1003, 'msg': '无法解析的JSON值，请检查token或Authorization请求头'}
+2023-05-11 16:09:00,443 - Abs测试报告 - DEBUG - 期望数据:{'code': '0', 'msg': 'OK'}
+2023-05-11 16:09:00,443 - Abs测试报告 - DEBUG - 实际结果:{'code': 1003, 'msg': '无法解析的JSON值，请检查token或Authorization请求头'}
+2023-05-11 16:09:00,443 - Abs测试报告 - DEBUG - 响应结果:{'code': 1003, 'copyright': 'Copyright 柠檬班 © 2017-2020 湖南省零檬信息技术有限公司 All Rights Reserved', 'msg': '无法解析的JSON值，请检查token或Authorization请求头'}
+2023-05-11 16:09:00,443 - Abs测试报告 - INFO - 用例【充值成功-两位小数】开始测试
+2023-05-11 16:09:00,443 - Abs测试报告 - DEBUG - url:http://api.lemonban.com/futureloan/member/recharge
+2023-05-11 16:09:00,443 - Abs测试报告 - DEBUG - method:post
+2023-05-11 16:09:00,443 - Abs测试报告 - DEBUG - request:{'headers': {'X-Lemonban-Media-Type': 'lemonban.v2', 'Authorization': 'BearereyJhbGciOiJIUzUxMiJ9.eyJtZW1iZXJfaWQiOjEwNzk1MSwiZXhwIjoxNjgzNzkyODQwfQ.kN5jkNtWrxLGMTQSiMSdUVBQQnVJeQ3IPg_jebtQJnSJfIJ5WhUv5bf6RGwa1-FcXWcELAcfwdOQi8Xkjk7m4Q'}, 'json': {'member_id': 107951, 'amount': 666.66}}
+2023-05-11 16:09:00,515 - Abs测试报告 - ERROR - 请求结果断言失败
+Traceback (most recent call last):
+  File "D:\learnpython\autoTest\testcases\test_recharge.py", line 91, in test_recharge
+    self.assertEqual(case['expect'], res)
+  File "C:\Program Files\Python310\lib\unittest\case.py", line 845, in assertEqual
+    assertion_func(first, second, msg=msg)
+  File "C:\Program Files\Python310\lib\unittest\case.py", line 1144, in assertDictEqual
+    self.fail(self._formatMessage(msg, standardMsg))
+  File "C:\Program Files\Python310\lib\unittest\case.py", line 675, in fail
+    raise self.failureException(msg)
+AssertionError: {'code': '0', 'msg': 'OK'} != {'code': 1003, 'msg': '无法解析的JSON值，请检查token或Authorization请求头'}
+- {'code': '0', 'msg': 'OK'}
++ {'code': 1003, 'msg': '无法解析的JSON值，请检查token或Authorization请求头'}
+2023-05-11 16:09:00,515 - Abs测试报告 - DEBUG - 期望数据:{'code': '0', 'msg': 'OK'}
+2023-05-11 16:09:00,515 - Abs测试报告 - DEBUG - 实际结果:{'code': 1003, 'msg': '无法解析的JSON值，请检查token或Authorization请求头'}
+2023-05-11 16:09:00,515 - Abs测试报告 - DEBUG - 响应结果:{'code': 1003, 'copyright': 'Copyright 柠檬班 © 2017-2020 湖南省零檬信息技术有限公司 All Rights Reserved', 'msg': '无法解析的JSON值，请检查token或Authorization请求头'}
+2023-05-11 16:09:00,515 - Abs测试报告 - INFO - **********充值接口测试结束**********
+2023-05-11 16:09:00,515 - Abs测试报告 - INFO - ----------BaseTest接口测试开始----------
+2023-05-11 16:09:00,516 - Abs测试报告 - INFO - 用例【注册成功-不带昵称和类型】开始测试
+2023-05-11 16:09:00,516 - Abs测试报告 - DEBUG - url:http://api.lemonban.com/futureloan/member/register
+2023-05-11 16:09:00,516 - Abs测试报告 - DEBUG - method:post
+2023-05-11 16:09:00,516 - Abs测试报告 - DEBUG - request:{'headers': {'X-Lemonban-Media-Type': 'lemonban.v2'}, 'json': {'mobile_phone': '18888888888', 'pwd': '12345678'}}
+2023-05-11 16:09:00,618 - Abs测试报告 - ERROR - 请求结果断言失败
+Traceback (most recent call last):
+  File "D:\learnpython\autoTest\testcases\test_register.py", line 74, in test_register
+    self.assertEqual(case['expect'], res)
+  File "C:\Program Files\Python310\lib\unittest\case.py", line 845, in assertEqual
+    assertion_func(first, second, msg=msg)
+  File "C:\Program Files\Python310\lib\unittest\case.py", line 1144, in assertDictEqual
+    self.fail(self._formatMessage(msg, standardMsg))
+  File "C:\Program Files\Python310\lib\unittest\case.py", line 675, in fail
+    raise self.failureException(msg)
+AssertionError: {'code': '0', 'msg': 'OK'} != {'code': 2, 'msg': '账号已存在'}
+- {'code': '0', 'msg': 'OK'}
+?          ^^^          ^^
+
++ {'code': 2, 'msg': '账号已存在'}
+?          ^          ^^^^^
+
+2023-05-11 16:09:00,618 - Abs测试报告 - DEBUG - 期望数据:{'code': '0', 'msg': 'OK'}
+2023-05-11 16:09:00,618 - Abs测试报告 - DEBUG - 实际结果:{'code': 2, 'msg': '账号已存在'}
+2023-05-11 16:09:00,619 - Abs测试报告 - DEBUG - 响应结果:{'code': 2, 'msg': '账号已存在', 'data': None, 'copyright': 'Copyright 柠檬班 © 2017-2020 湖南省零檬信息技术有限公司 All Rights Reserved'}
+2023-05-11 16:09:00,619 - Abs测试报告 - INFO - 用例【注册成功-带昵称-类型为0】开始测试
+2023-05-11 16:09:00,619 - Abs测试报告 - DEBUG - url:http://api.lemonban.com/futureloan/member/register
+2023-05-11 16:09:00,619 - Abs测试报告 - DEBUG - method:post
+2023-05-11 16:09:00,619 - Abs测试报告 - DEBUG - request:{'headers': {'X-Lemonban-Media-Type': 'lemonban.v2'}, 'json': {'mobile_phone': '18888888888', 'pwd': '12345678', 'type': '0', 'reg_name': 'lemon'}}
+2023-05-11 16:09:00,728 - Abs测试报告 - ERROR - 请求结果断言失败
+Traceback (most recent call last):
+  File "D:\learnpython\autoTest\testcases\test_register.py", line 74, in test_register
+    self.assertEqual(case['expect'], res)
+  File "C:\Program Files\Python310\lib\unittest\case.py", line 845, in assertEqual
+    assertion_func(first, second, msg=msg)
+  File "C:\Program Files\Python310\lib\unittest\case.py", line 1144, in assertDictEqual
+    self.fail(self._formatMessage(msg, standardMsg))
+  File "C:\Program Files\Python310\lib\unittest\case.py", line 675, in fail
+    raise self.failureException(msg)
+AssertionError: {'code': '0', 'msg': 'OK'} != {'code': 2, 'msg': '账号已存在'}
+- {'code': '0', 'msg': 'OK'}
+?          ^^^          ^^
+
++ {'code': 2, 'msg': '账号已存在'}
+?          ^          ^^^^^
+
+2023-05-11 16:09:00,729 - Abs测试报告 - DEBUG - 期望数据:{'code': '0', 'msg': 'OK'}
+2023-05-11 16:09:00,729 - Abs测试报告 - DEBUG - 实际结果:{'code': 2, 'msg': '账号已存在'}
+2023-05-11 16:09:00,729 - Abs测试报告 - DEBUG - 响应结果:{'code': 2, 'msg': '账号已存在', 'data': None, 'copyright': 'Copyright 柠檬班 © 2017-2020 湖南省零檬信息技术有限公司 All Rights Reserved'}
+2023-05-11 16:09:00,729 - Abs测试报告 - INFO - 用例【注册成功-带昵称-类型为1】开始测试
+2023-05-11 16:09:00,729 - Abs测试报告 - DEBUG - url:http://api.lemonban.com/futureloan/member/register
+2023-05-11 16:09:00,729 - Abs测试报告 - DEBUG - method:post
+2023-05-11 16:09:00,729 - Abs测试报告 - DEBUG - request:{'headers': {'X-Lemonban-Media-Type': 'lemonban.v2'}, 'json': {'mobile_phone': '18888888888', 'pwd': '12345678', 'type': '1'}}
+2023-05-11 16:09:01,048 - Abs测试报告 - ERROR - 请求结果断言失败
+Traceback (most recent call last):
+  File "D:\learnpython\autoTest\testcases\test_register.py", line 74, in test_register
+    self.assertEqual(case['expect'], res)
+  File "C:\Program Files\Python310\lib\unittest\case.py", line 845, in assertEqual
+    assertion_func(first, second, msg=msg)
+  File "C:\Program Files\Python310\lib\unittest\case.py", line 1144, in assertDictEqual
+    self.fail(self._formatMessage(msg, standardMsg))
+  File "C:\Program Files\Python310\lib\unittest\case.py", line 675, in fail
+    raise self.failureException(msg)
+AssertionError: {'code': '0', 'msg': 'OK'} != {'code': 2, 'msg': '账号已存在'}
+- {'code': '0', 'msg': 'OK'}
+?          ^^^          ^^
+
++ {'code': 2, 'msg': '账号已存在'}
+?          ^          ^^^^^
+
+2023-05-11 16:09:01,049 - Abs测试报告 - DEBUG - 期望数据:{'code': '0', 'msg': 'OK'}
+2023-05-11 16:09:01,049 - Abs测试报告 - DEBUG - 实际结果:{'code': 2, 'msg': '账号已存在'}
+2023-05-11 16:09:01,049 - Abs测试报告 - DEBUG - 响应结果:{'code': 2, 'msg': '账号已存在', 'data': None, 'copyright': 'Copyright 柠檬班 © 2017-2020 湖南省零檬信息技术有限公司 All Rights Reserved'}
+2023-05-11 16:09:01,049 - Abs测试报告 - INFO - **********BaseTest接口测试结束**********
+2023-05-11 16:15:01,771 - Abs测试报告 - INFO - ----------base用例接口测试开始----------
+2023-05-11 16:15:01,772 - Abs测试报告 - INFO - 用例【注册成功-不带昵称和类型】开始测试
+2023-05-11 16:15:01,772 - Abs测试报告 - DEBUG - url:http://api.lemonban.com/futureloan/member/register
+2023-05-11 16:15:01,772 - Abs测试报告 - DEBUG - method:post
+2023-05-11 16:15:01,772 - Abs测试报告 - DEBUG - request:{'headers': {'X-Lemonban-Media-Type': 'lemonban.v2'}, 'json': {'mobile_phone': '18888888888', 'pwd': '12345678'}}
+2023-05-11 16:15:01,898 - Abs测试报告 - ERROR - 请求结果断言失败
+Traceback (most recent call last):
+  File "D:\learnpython\autoTest\testcases\test_register.py", line 74, in test_register
+    self.assertEqual(case['expect'], res)
+  File "C:\Program Files\JetBrains\PyCharm 2022.2.3\plugins\python\helpers\pycharm\teamcity\diff_tools.py", line 33, in _patched_equals
+    old(self, first, second, msg)
+  File "C:\Program Files\Python310\lib\unittest\case.py", line 845, in assertEqual
+    assertion_func(first, second, msg=msg)
+  File "C:\Program Files\Python310\lib\unittest\case.py", line 1144, in assertDictEqual
+    self.fail(self._formatMessage(msg, standardMsg))
+  File "C:\Program Files\Python310\lib\unittest\case.py", line 675, in fail
+    raise self.failureException(msg)
+AssertionError: {'code': '0', 'msg': 'OK'} != {'code': 2, 'msg': '账号已存在'}
+- {'code': '0', 'msg': 'OK'}
+?          ^^^          ^^
+
++ {'code': 2, 'msg': '账号已存在'}
+?          ^          ^^^^^
+
+2023-05-11 16:15:01,899 - Abs测试报告 - DEBUG - 期望数据:{'code': '0', 'msg': 'OK'}
+2023-05-11 16:15:01,899 - Abs测试报告 - DEBUG - 实际结果:{'code': 2, 'msg': '账号已存在'}
+2023-05-11 16:15:01,900 - Abs测试报告 - DEBUG - 响应结果:{'code': 2, 'msg': '账号已存在', 'data': None, 'copyright': 'Copyright 柠檬班 © 2017-2020 湖南省零檬信息技术有限公司 All Rights Reserved'}
+2023-05-11 16:15:01,901 - Abs测试报告 - INFO - 用例【注册成功-带昵称-类型为0】开始测试
+2023-05-11 16:15:01,901 - Abs测试报告 - DEBUG - url:http://api.lemonban.com/futureloan/member/register
+2023-05-11 16:15:01,902 - Abs测试报告 - DEBUG - method:post
+2023-05-11 16:15:01,902 - Abs测试报告 - DEBUG - request:{'headers': {'X-Lemonban-Media-Type': 'lemonban.v2'}, 'json': {'mobile_phone': '18888888888', 'pwd': '12345678', 'type': '0', 'reg_name': 'lemon'}}
+2023-05-11 16:15:02,016 - Abs测试报告 - ERROR - 请求结果断言失败
+Traceback (most recent call last):
+  File "D:\learnpython\autoTest\testcases\test_register.py", line 74, in test_register
+    self.assertEqual(case['expect'], res)
+  File "C:\Program Files\JetBrains\PyCharm 2022.2.3\plugins\python\helpers\pycharm\teamcity\diff_tools.py", line 33, in _patched_equals
+    old(self, first, second, msg)
+  File "C:\Program Files\Python310\lib\unittest\case.py", line 845, in assertEqual
+    assertion_func(first, second, msg=msg)
+  File "C:\Program Files\Python310\lib\unittest\case.py", line 1144, in assertDictEqual
+    self.fail(self._formatMessage(msg, standardMsg))
+  File "C:\Program Files\Python310\lib\unittest\case.py", line 675, in fail
+    raise self.failureException(msg)
+AssertionError: {'code': '0', 'msg': 'OK'} != {'code': 2, 'msg': '账号已存在'}
+- {'code': '0', 'msg': 'OK'}
+?          ^^^          ^^
+
++ {'code': 2, 'msg': '账号已存在'}
+?          ^          ^^^^^
+
+2023-05-11 16:15:02,017 - Abs测试报告 - DEBUG - 期望数据:{'code': '0', 'msg': 'OK'}
+2023-05-11 16:15:02,017 - Abs测试报告 - DEBUG - 实际结果:{'code': 2, 'msg': '账号已存在'}
+2023-05-11 16:15:02,017 - Abs测试报告 - DEBUG - 响应结果:{'code': 2, 'msg': '账号已存在', 'data': None, 'copyright': 'Copyright 柠檬班 © 2017-2020 湖南省零檬信息技术有限公司 All Rights Reserved'}
+2023-05-11 16:15:02,019 - Abs测试报告 - INFO - 用例【注册成功-带昵称-类型为1】开始测试
+2023-05-11 16:15:02,019 - Abs测试报告 - DEBUG - url:http://api.lemonban.com/futureloan/member/register
+2023-05-11 16:15:02,019 - Abs测试报告 - DEBUG - method:post
+2023-05-11 16:15:02,019 - Abs测试报告 - DEBUG - request:{'headers': {'X-Lemonban-Media-Type': 'lemonban.v2'}, 'json': {'mobile_phone': '18888888888', 'pwd': '12345678', 'type': '1'}}
+2023-05-11 16:15:02,126 - Abs测试报告 - ERROR - 请求结果断言失败
+Traceback (most recent call last):
+  File "D:\learnpython\autoTest\testcases\test_register.py", line 74, in test_register
+    self.assertEqual(case['expect'], res)
+  File "C:\Program Files\JetBrains\PyCharm 2022.2.3\plugins\python\helpers\pycharm\teamcity\diff_tools.py", line 33, in _patched_equals
+    old(self, first, second, msg)
+  File "C:\Program Files\Python310\lib\unittest\case.py", line 845, in assertEqual
+    assertion_func(first, second, msg=msg)
+  File "C:\Program Files\Python310\lib\unittest\case.py", line 1144, in assertDictEqual
+    self.fail(self._formatMessage(msg, standardMsg))
+  File "C:\Program Files\Python310\lib\unittest\case.py", line 675, in fail
+    raise self.failureException(msg)
+AssertionError: {'code': '0', 'msg': 'OK'} != {'code': 2, 'msg': '账号已存在'}
+- {'code': '0', 'msg': 'OK'}
+?          ^^^          ^^
+
++ {'code': 2, 'msg': '账号已存在'}
+?          ^          ^^^^^
+
+2023-05-11 16:15:02,127 - Abs测试报告 - DEBUG - 期望数据:{'code': '0', 'msg': 'OK'}
+2023-05-11 16:15:02,127 - Abs测试报告 - DEBUG - 实际结果:{'code': 2, 'msg': '账号已存在'}
+2023-05-11 16:15:02,127 - Abs测试报告 - DEBUG - 响应结果:{'code': 2, 'msg': '账号已存在', 'data': None, 'copyright': 'Copyright 柠檬班 © 2017-2020 湖南省零檬信息技术有限公司 All Rights Reserved'}
+2023-05-11 16:15:02,128 - Abs测试报告 - INFO - **********base用例接口测试结束**********
+2023-05-11 16:15:25,866 - Abs测试报告 - INFO - ----------base用例接口测试开始----------
+2023-05-11 16:15:25,867 - Abs测试报告 - INFO - 用例【注册成功-不带昵称和类型】开始测试
+2023-05-11 16:15:25,867 - Abs测试报告 - DEBUG - url:http://api.lemonban.com/futureloan/member/register
+2023-05-11 16:15:25,867 - Abs测试报告 - DEBUG - method:post
+2023-05-11 16:15:25,867 - Abs测试报告 - DEBUG - request:{'headers': {'X-Lemonban-Media-Type': 'lemonban.v2'}, 'json': {'mobile_phone': '18888888888', 'pwd': '12345678'}}
+2023-05-11 16:15:25,984 - Abs测试报告 - ERROR - 请求结果断言失败
+Traceback (most recent call last):
+  File "D:\learnpython\autoTest\testcases\test_register.py", line 74, in test_register
+    self.assertEqual(case['expect'], res)
+  File "C:\Program Files\JetBrains\PyCharm 2022.2.3\plugins\python\helpers\pycharm\teamcity\diff_tools.py", line 33, in _patched_equals
+    old(self, first, second, msg)
+  File "C:\Program Files\Python310\lib\unittest\case.py", line 845, in assertEqual
+    assertion_func(first, second, msg=msg)
+  File "C:\Program Files\Python310\lib\unittest\case.py", line 1144, in assertDictEqual
+    self.fail(self._formatMessage(msg, standardMsg))
+  File "C:\Program Files\Python310\lib\unittest\case.py", line 675, in fail
+    raise self.failureException(msg)
+AssertionError: {'code': '0', 'msg': 'OK'} != {'code': 2, 'msg': '账号已存在'}
+- {'code': '0', 'msg': 'OK'}
+?          ^^^          ^^
+
++ {'code': 2, 'msg': '账号已存在'}
+?          ^          ^^^^^
+
+2023-05-11 16:15:25,986 - Abs测试报告 - DEBUG - 期望数据:{'code': '0', 'msg': 'OK'}
+2023-05-11 16:15:25,986 - Abs测试报告 - DEBUG - 实际结果:{'code': 2, 'msg': '账号已存在'}
+2023-05-11 16:15:25,986 - Abs测试报告 - DEBUG - 响应结果:{'code': 2, 'msg': '账号已存在', 'data': None, 'copyright': 'Copyright 柠檬班 © 2017-2020 湖南省零檬信息技术有限公司 All Rights Reserved'}
+2023-05-11 16:15:25,988 - Abs测试报告 - INFO - 用例【注册成功-带昵称-类型为0】开始测试
+2023-05-11 16:15:25,988 - Abs测试报告 - DEBUG - url:http://api.lemonban.com/futureloan/member/register
+2023-05-11 16:15:25,988 - Abs测试报告 - DEBUG - method:post
+2023-05-11 16:15:25,988 - Abs测试报告 - DEBUG - request:{'headers': {'X-Lemonban-Media-Type': 'lemonban.v2'}, 'json': {'mobile_phone': '18888888888', 'pwd': '12345678', 'type': '0', 'reg_name': 'lemon'}}
+2023-05-11 16:15:26,109 - Abs测试报告 - ERROR - 请求结果断言失败
+Traceback (most recent call last):
+  File "D:\learnpython\autoTest\testcases\test_register.py", line 74, in test_register
+    self.assertEqual(case['expect'], res)
+  File "C:\Program Files\JetBrains\PyCharm 2022.2.3\plugins\python\helpers\pycharm\teamcity\diff_tools.py", line 33, in _patched_equals
+    old(self, first, second, msg)
+  File "C:\Program Files\Python310\lib\unittest\case.py", line 845, in assertEqual
+    assertion_func(first, second, msg=msg)
+  File "C:\Program Files\Python310\lib\unittest\case.py", line 1144, in assertDictEqual
+    self.fail(self._formatMessage(msg, standardMsg))
+  File "C:\Program Files\Python310\lib\unittest\case.py", line 675, in fail
+    raise self.failureException(msg)
+AssertionError: {'code': '0', 'msg': 'OK'} != {'code': 2, 'msg': '账号已存在'}
+- {'code': '0', 'msg': 'OK'}
+?          ^^^          ^^
+
++ {'code': 2, 'msg': '账号已存在'}
+?          ^          ^^^^^
+
+2023-05-11 16:15:26,110 - Abs测试报告 - DEBUG - 期望数据:{'code': '0', 'msg': 'OK'}
+2023-05-11 16:15:26,110 - Abs测试报告 - DEBUG - 实际结果:{'code': 2, 'msg': '账号已存在'}
+2023-05-11 16:15:26,110 - Abs测试报告 - DEBUG - 响应结果:{'code': 2, 'msg': '账号已存在', 'data': None, 'copyright': 'Copyright 柠檬班 © 2017-2020 湖南省零檬信息技术有限公司 All Rights Reserved'}
+2023-05-11 16:15:26,112 - Abs测试报告 - INFO - 用例【注册成功-带昵称-类型为1】开始测试
+2023-05-11 16:15:26,112 - Abs测试报告 - DEBUG - url:http://api.lemonban.com/futureloan/member/register
+2023-05-11 16:15:26,112 - Abs测试报告 - DEBUG - method:post
+2023-05-11 16:15:26,112 - Abs测试报告 - DEBUG - request:{'headers': {'X-Lemonban-Media-Type': 'lemonban.v2'}, 'json': {'mobile_phone': '18888888888', 'pwd': '12345678', 'type': '1'}}
+2023-05-11 16:15:26,226 - Abs测试报告 - ERROR - 请求结果断言失败
+Traceback (most recent call last):
+  File "D:\learnpython\autoTest\testcases\test_register.py", line 74, in test_register
+    self.assertEqual(case['expect'], res)
+  File "C:\Program Files\JetBrains\PyCharm 2022.2.3\plugins\python\helpers\pycharm\teamcity\diff_tools.py", line 33, in _patched_equals
+    old(self, first, second, msg)
+  File "C:\Program Files\Python310\lib\unittest\case.py", line 845, in assertEqual
+    assertion_func(first, second, msg=msg)
+  File "C:\Program Files\Python310\lib\unittest\case.py", line 1144, in assertDictEqual
+    self.fail(self._formatMessage(msg, standardMsg))
+  File "C:\Program Files\Python310\lib\unittest\case.py", line 675, in fail
+    raise self.failureException(msg)
+AssertionError: {'code': '0', 'msg': 'OK'} != {'code': 2, 'msg': '账号已存在'}
+- {'code': '0', 'msg': 'OK'}
+?          ^^^          ^^
+
++ {'code': 2, 'msg': '账号已存在'}
+?          ^          ^^^^^
+
+2023-05-11 16:15:26,226 - Abs测试报告 - DEBUG - 期望数据:{'code': '0', 'msg': 'OK'}
+2023-05-11 16:15:26,226 - Abs测试报告 - DEBUG - 实际结果:{'code': 2, 'msg': '账号已存在'}
+2023-05-11 16:15:26,226 - Abs测试报告 - DEBUG - 响应结果:{'code': 2, 'msg': '账号已存在', 'data': None, 'copyright': 'Copyright 柠檬班 © 2017-2020 湖南省零檬信息技术有限公司 All Rights Reserved'}
+2023-05-11 16:15:26,227 - Abs测试报告 - INFO - **********base用例接口测试结束**********
+2023-05-11 16:18:01,778 - Abs测试报告 - INFO - ----------注册接口测试开始----------
+2023-05-11 16:18:01,779 - Abs测试报告 - INFO - 用例【注册成功-不带昵称和类型】开始测试
+2023-05-11 16:18:01,779 - Abs测试报告 - DEBUG - url:http://api.lemonban.com/futureloan/member/register
+2023-05-11 16:18:01,780 - Abs测试报告 - DEBUG - method:post
+2023-05-11 16:18:01,780 - Abs测试报告 - DEBUG - request:{'headers': {'X-Lemonban-Media-Type': 'lemonban.v2'}, 'json': {'mobile_phone': '18888888888', 'pwd': '12345678'}}
+2023-05-11 16:18:01,910 - Abs测试报告 - ERROR - 请求结果断言失败
+Traceback (most recent call last):
+  File "D:\learnpython\autoTest\testcases\test_register.py", line 75, in test_register
+    self.assertEqual(case['expect'], res)
+  File "C:\Program Files\JetBrains\PyCharm 2022.2.3\plugins\python\helpers\pycharm\teamcity\diff_tools.py", line 33, in _patched_equals
+    old(self, first, second, msg)
+  File "C:\Program Files\Python310\lib\unittest\case.py", line 845, in assertEqual
+    assertion_func(first, second, msg=msg)
+  File "C:\Program Files\Python310\lib\unittest\case.py", line 1144, in assertDictEqual
+    self.fail(self._formatMessage(msg, standardMsg))
+  File "C:\Program Files\Python310\lib\unittest\case.py", line 675, in fail
+    raise self.failureException(msg)
+AssertionError: {'code': '0', 'msg': 'OK'} != {'code': 2, 'msg': '账号已存在'}
+- {'code': '0', 'msg': 'OK'}
+?          ^^^          ^^
+
++ {'code': 2, 'msg': '账号已存在'}
+?          ^          ^^^^^
+
+2023-05-11 16:18:01,911 - Abs测试报告 - DEBUG - 期望数据:{'code': '0', 'msg': 'OK'}
+2023-05-11 16:18:01,911 - Abs测试报告 - DEBUG - 实际结果:{'code': 2, 'msg': '账号已存在'}
+2023-05-11 16:18:01,911 - Abs测试报告 - DEBUG - 响应结果:{'code': 2, 'msg': '账号已存在', 'data': None, 'copyright': 'Copyright 柠檬班 © 2017-2020 湖南省零檬信息技术有限公司 All Rights Reserved'}
+2023-05-11 16:18:01,913 - Abs测试报告 - INFO - 用例【注册成功-带昵称-类型为0】开始测试
+2023-05-11 16:18:01,913 - Abs测试报告 - DEBUG - url:http://api.lemonban.com/futureloan/member/register
+2023-05-11 16:18:01,913 - Abs测试报告 - DEBUG - method:post
+2023-05-11 16:18:01,913 - Abs测试报告 - DEBUG - request:{'headers': {'X-Lemonban-Media-Type': 'lemonban.v2'}, 'json': {'mobile_phone': '18888888888', 'pwd': '12345678', 'type': '0', 'reg_name': 'lemon'}}
+2023-05-11 16:18:02,036 - Abs测试报告 - ERROR - 请求结果断言失败
+Traceback (most recent call last):
+  File "D:\learnpython\autoTest\testcases\test_register.py", line 75, in test_register
+    self.assertEqual(case['expect'], res)
+  File "C:\Program Files\JetBrains\PyCharm 2022.2.3\plugins\python\helpers\pycharm\teamcity\diff_tools.py", line 33, in _patched_equals
+    old(self, first, second, msg)
+  File "C:\Program Files\Python310\lib\unittest\case.py", line 845, in assertEqual
+    assertion_func(first, second, msg=msg)
+  File "C:\Program Files\Python310\lib\unittest\case.py", line 1144, in assertDictEqual
+    self.fail(self._formatMessage(msg, standardMsg))
+  File "C:\Program Files\Python310\lib\unittest\case.py", line 675, in fail
+    raise self.failureException(msg)
+AssertionError: {'code': '0', 'msg': 'OK'} != {'code': 2, 'msg': '账号已存在'}
+- {'code': '0', 'msg': 'OK'}
+?          ^^^          ^^
+
++ {'code': 2, 'msg': '账号已存在'}
+?          ^          ^^^^^
+
+2023-05-11 16:18:02,037 - Abs测试报告 - DEBUG - 期望数据:{'code': '0', 'msg': 'OK'}
+2023-05-11 16:18:02,037 - Abs测试报告 - DEBUG - 实际结果:{'code': 2, 'msg': '账号已存在'}
+2023-05-11 16:18:02,037 - Abs测试报告 - DEBUG - 响应结果:{'code': 2, 'msg': '账号已存在', 'data': None, 'copyright': 'Copyright 柠檬班 © 2017-2020 湖南省零檬信息技术有限公司 All Rights Reserved'}
+2023-05-11 16:18:02,039 - Abs测试报告 - INFO - 用例【注册成功-带昵称-类型为1】开始测试
+2023-05-11 16:18:02,040 - Abs测试报告 - DEBUG - url:http://api.lemonban.com/futureloan/member/register
+2023-05-11 16:18:02,040 - Abs测试报告 - DEBUG - method:post
+2023-05-11 16:18:02,040 - Abs测试报告 - DEBUG - request:{'headers': {'X-Lemonban-Media-Type': 'lemonban.v2'}, 'json': {'mobile_phone': '18888888888', 'pwd': '12345678', 'type': '1'}}
+2023-05-11 16:18:02,165 - Abs测试报告 - ERROR - 请求结果断言失败
+Traceback (most recent call last):
+  File "D:\learnpython\autoTest\testcases\test_register.py", line 75, in test_register
+    self.assertEqual(case['expect'], res)
+  File "C:\Program Files\JetBrains\PyCharm 2022.2.3\plugins\python\helpers\pycharm\teamcity\diff_tools.py", line 33, in _patched_equals
+    old(self, first, second, msg)
+  File "C:\Program Files\Python310\lib\unittest\case.py", line 845, in assertEqual
+    assertion_func(first, second, msg=msg)
+  File "C:\Program Files\Python310\lib\unittest\case.py", line 1144, in assertDictEqual
+    self.fail(self._formatMessage(msg, standardMsg))
+  File "C:\Program Files\Python310\lib\unittest\case.py", line 675, in fail
+    raise self.failureException(msg)
+AssertionError: {'code': '0', 'msg': 'OK'} != {'code': 2, 'msg': '账号已存在'}
+- {'code': '0', 'msg': 'OK'}
+?          ^^^          ^^
+
++ {'code': 2, 'msg': '账号已存在'}
+?          ^          ^^^^^
+
+2023-05-11 16:18:02,166 - Abs测试报告 - DEBUG - 期望数据:{'code': '0', 'msg': 'OK'}
+2023-05-11 16:18:02,166 - Abs测试报告 - DEBUG - 实际结果:{'code': 2, 'msg': '账号已存在'}
+2023-05-11 16:18:02,166 - Abs测试报告 - DEBUG - 响应结果:{'code': 2, 'msg': '账号已存在', 'data': None, 'copyright': 'Copyright 柠檬班 © 2017-2020 湖南省零檬信息技术有限公司 All Rights Reserved'}
+2023-05-11 16:18:02,167 - Abs测试报告 - INFO - **********注册接口测试结束**********

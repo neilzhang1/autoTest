@@ -12,7 +12,7 @@ from ddt import ddt, data
 import settings
 from common import logger, db
 from common.fixture import register, login
-from common.test_data_handler import get_test_data_from_excel, generate_no_use_phone
+from common.test_data_handler import get_test_data_from_excel, generate_no_use_phone,replace_args_by_re
 from common.make_requests import send_http_request
 
 cases = get_test_data_from_excel(settings.TEST_DATA_CONFIG, 'recharge')
@@ -58,8 +58,9 @@ class TestRecharge(unittest.TestCase):
 
         # 处理测试数据
         # 替换数据
-        case['request'] = case['request'].replace('#member_id#', str(self.member_id))
-        case['request'] = case['request'].replace('#token#', self.token)
+        # case['request'] = case['request'].replace('#member_id#', str(self.member_id))
+        # case['request'] = case['request'].replace('#token#', self.token)
+        case['request'] = replace_args_by_re(case['request'],self)
 
         # 将字符串转换为json
         case['request'] = json.loads(case['request'])
@@ -79,7 +80,7 @@ class TestRecharge(unittest.TestCase):
 
         # 状态码断言
         try:
-            self.assertEqual(200, response.status_code)
+            self.assertEqual(case['status_code'], response.status_code)
         except AssertionError as e:
             self.logger.exception('状态码断言失败')
             raise e
