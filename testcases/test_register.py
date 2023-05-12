@@ -5,18 +5,19 @@
 # @Software: PyCharm
 import unittest
 import json
-from ddt import ddt,data
-from common.test_data_handler import get_test_data_from_excel,generate_no_use_phone
+from ddt import ddt, data
+from common.test_data_handler import get_test_data_from_excel, generate_no_use_phone
 from common import logger
 from common import db
 from common.make_requests import send_http_request
 import settings
-from testcases.base_test import BaseTest
+from testcases.base_cases import BaseCase
 
-cases = get_test_data_from_excel(settings.TEST_DATA_CONFIG, 'register')
+cases = get_test_data_from_excel(BaseCase.settings.TEST_DATA_CONFIG, 'register')
+
 
 @ddt
-class TestRegister(BaseTest):
+class TestRegister(BaseCase):
     """
     测试注册接口
     """
@@ -24,6 +25,7 @@ class TestRegister(BaseTest):
     # db = db
     #
     name = '注册'
+
     # @classmethod
     # def setUpClass(cls) -> None:
     #     cls.logger.info('----------注册接口测试开始----------')
@@ -33,54 +35,52 @@ class TestRegister(BaseTest):
     #     cls.logger.info('**********注册接口测试结束**********')
 
     @data(*cases)
-    def test_register(self,case):
+    def test_register(self, case):
+        self.checkout(case)
 
-        self.logger.info('用例【{}】开始测试'.format(case['title']))
-
-        #测试数据处理
-
-        #判断是否需要生成手机号码
-        if '#phone#' in case['request']:
-            phone = generate_no_use_phone()
-            case['request'] = case['request'].replace('#phone#',phone)
-            if '#phone#' in case['sql']:
-                case['sql'] = case['sql'].replace('#phone#', phone)
-
-        #将json数据转换为python对象
-        case['request'] = json.loads(case['request'])
-        case['expect'] = json.loads(case['expect'])
-
-        #拼接url
-        case['url'] = settings.PROJECT_HOST + settings.INTERFACES[case['url']]
-
-        #测试步骤
-        self.logger.debug('url:{}'.format(case['url']))
-        self.logger.debug('method:{}'.format(case['method']))
-        self.logger.debug('request:{}'.format(case['request']))
-
-
-        response = send_http_request(url=case['url'],method=case['method'],**case['request'])
-        # 断言
-        response_data = response.json()
-        # 状态码断言
-        try:
-            self.assertEqual(case['status_code'],response.status_code)
-        except AssertionError as e:
-            self.logger.exception('状态码断言失败')
-            raise e
-
-        # 请求结果断言
-        res = {'code': response_data['code'], 'msg': response_data['msg']}
-        try:
-            self.assertEqual(case['expect'], res)
-        except AssertionError as e:
-            self.logger.exception('请求结果断言失败')
-            self.logger.debug('期望数据:{}'.format(case['expect']))
-            self.logger.debug('实际结果:{}'.format(res))
-            self.logger.debug('响应结果:{}'.format(response_data))
-
-
+        # self.logger.info('用例【{}】开始测试'.format(case['title']))
+        #
+        # # 测试数据处理
+        #
+        # # 判断是否需要生成手机号码
+        # if '#phone#' in case['request']:
+        #     phone = generate_no_use_phone()
+        #     case['request'] = case['request'].replace('#phone#', phone)
+        #     if '#phone#' in case['sql']:
+        #         case['sql'] = case['sql'].replace('#phone#', phone)
+        #
+        # # 将json数据转换为python对象
+        # case['request'] = json.loads(case['request'])
+        # case['expect'] = json.loads(case['expect'])
+        #
+        # # 拼接url
+        # case['url'] = settings.PROJECT_HOST + settings.INTERFACES[case['url']]
+        #
+        # # 测试步骤
+        # self.logger.debug('url:{}'.format(case['url']))
+        # self.logger.debug('method:{}'.format(case['method']))
+        # self.logger.debug('request:{}'.format(case['request']))
+        #
+        # response = send_http_request(url=case['url'], method=case['method'], **case['request'])
+        # # 断言
+        # response_data = response.json()
+        # # 状态码断言
+        # try:
+        #     self.assertEqual(case['status_code'], response.status_code)
+        # except AssertionError as e:
+        #     self.logger.exception('状态码断言失败')
+        #     raise e
+        #
+        # # 请求结果断言
+        # res = {'code': response_data['code'], 'msg': response_data['msg']}
+        # try:
+        #     self.assertEqual(case['expect'], res)
+        # except AssertionError as e:
+        #     self.logger.exception('请求结果断言失败')
+        #     self.logger.debug('期望数据:{}'.format(case['expect']))
+        #     self.logger.debug('实际结果:{}'.format(res))
+        #     self.logger.debug('响应结果:{}'.format(response_data))
 
 
 if __name__ == '__main__':
-    print(cases[1]['request'])
+    unittest.main()

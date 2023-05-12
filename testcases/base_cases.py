@@ -7,7 +7,7 @@ from common.make_requests import send_http_request
 from common.test_data_handler import generate_no_use_phone, replace_args_by_re
 
 
-class BaseTest(unittest.TestCase):
+class BaseCase(unittest.TestCase):
     name = 'base用例'
     db = db
     logger = logger
@@ -27,7 +27,7 @@ class BaseTest(unittest.TestCase):
         # 1.测试数据处理
         self.pre_test_data()
         # 2.测试步骤
-        response = self.test_step()
+        response = self.step()
         # 3.状态码断言
         self.assert_status_code()
         # 4.测试数据断言
@@ -65,12 +65,12 @@ class BaseTest(unittest.TestCase):
         # 1.5拼接url
         self.case['url'] = self.settings.PROJECT_HOST + self.settings.INTERFACES[self.case['url']]
 
-    def test_step(self):
+    def step(self):
         """
         测试步骤
         """
         try:
-            self.respnse = send_http_request(url=self.case['url'], method=self.case['method'],**self.case['request'])
+            self.response = send_http_request(url=self.case['url'], method=self.case['method'], **self.case['request'])
         except Exception as e:
             self.logger.error('用例【{}】发送请求失败'.format(self.case['title']))
             self.logger.debug('请求参数是{}'.format(self.case['request']))
@@ -84,11 +84,11 @@ class BaseTest(unittest.TestCase):
         断言状态码
         """
         try:
-            self.assertEqual(self.respnse.status_code, self.case['expect']['status_code'])
+            self.assertEqual(self.response.status_code, self.case['status_code'])
         except AssertionError as e:
             self.logger.exception('用例【{}】状态码断言失败'.format(self.case['title']))
-            self.logger.debug('实际结果是{}'.format(self.respnse.status_code))
-            self.logger.debug('预期结果是{}'.format(self.case['expect']['status_code']))
+            self.logger.debug('实际结果是{}'.format(self.response.status_code))
+            self.logger.debug('预期结果是{}'.format(self.case['status_code']))
             raise e
         else:
             self.logger.info('用例【{}】状态码断言成功'.format(self.case['title']))
@@ -97,8 +97,8 @@ class BaseTest(unittest.TestCase):
         """
         断言响应数据
         """
-        response_data = self.respnse.json()
-        res = {'code':response_data['code'],'msg':response_data['msg']}
+        response_data = self.response.json()
+        res = {'code': response_data['code'], 'msg': response_data['msg']}
         try:
             self.assertEqual(self.case['expect'], res)
         except AssertionError as e:
@@ -108,7 +108,6 @@ class BaseTest(unittest.TestCase):
             raise e
         else:
             self.logger.info('用例【{}】响应数据断言成功'.format(self.case['title']))
-
 
     def assert_db_true(self):
         """
@@ -124,4 +123,3 @@ class BaseTest(unittest.TestCase):
                 raise e
             else:
                 self.logger.info('用例【{}】数据库断言成功'.format(self.case['title']))
-
