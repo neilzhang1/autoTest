@@ -1,6 +1,6 @@
 import json
 import unittest
-
+import jsonpath
 from common import logger, db
 import settings
 from common.make_requests import send_http_request
@@ -34,6 +34,8 @@ class BaseCase(unittest.TestCase):
         self.assert_json_response()
         # 5.数据库断言
         self.assert_db_true()
+        # 6.测试数据提取
+        self.extract_data()
         self.logger.info('用例【{}】测试结束'.format(case['title']))
 
     def pre_test_data(self):
@@ -123,3 +125,17 @@ class BaseCase(unittest.TestCase):
                 raise e
             else:
                 self.logger.info('用例【{}】数据库断言成功'.format(self.case['title']))
+
+    def extract_data(self):
+        """
+        提取响应中的数据并保存到用例类属性中
+        """
+        if self.case.get('extract'):
+            for item in json.loads(self.case['extract']):
+                name = item['name']
+                exp = item['exp']
+                res = jsonpath.jsonpath(self.response.json(), exp)
+                if res:
+                    setattr(self.__class__, name, res[0])
+                else:
+                    raise ValueError('用例【{}】提取表达式【{}】失败'.format(self.case['title'], exp))
