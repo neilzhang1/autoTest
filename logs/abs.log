@@ -763,3 +763,152 @@ AssertionError: {'code': '0', 'msg': 'OK'} != {'code': 2, 'msg': '账号已存�
 2023-05-15 17:03:54,479 - Abs测试报告 - INFO - 用例【充值】响应数据断言成功
 2023-05-15 17:03:54,480 - Abs测试报告 - INFO - 用例【充值】测试结束
 2023-05-15 17:03:54,481 - Abs测试报告 - INFO - **********贷款主流程接口测试结束**********
+2023-05-16 11:33:25,474 - Abs测试报告 - INFO - ==========start==========
+2023-05-16 11:33:25,474 - Abs测试报告 - INFO - 用例加法开始测试
+2023-05-16 11:33:25,474 - Abs测试报告 - INFO - 用例加法测试通过
+2023-05-16 11:33:25,475 - Abs测试报告 - INFO - 用例减法开始测试
+2023-05-16 11:33:25,475 - Abs测试报告 - INFO - 用例减法测试通过
+2023-05-16 11:33:25,475 - Abs测试报告 - INFO - 用例乘法开始测试
+2023-05-16 11:33:25,475 - Abs测试报告 - INFO - 用例乘法测试通过
+2023-05-16 11:33:25,475 - Abs测试报告 - INFO - 用例除法开始测试
+2023-05-16 11:33:25,475 - Abs测试报告 - INFO - 用例除法测试通过
+2023-05-16 11:33:25,475 - Abs测试报告 - INFO - **********end**********
+2023-05-16 11:33:25,475 - Abs测试报告 - INFO - ----------贷款主流程接口测试开始----------
+2023-05-16 11:33:25,475 - Abs测试报告 - INFO - 用例【用户注册】开始测试
+2023-05-16 11:33:25,475 - Abs测试报告 - INFO - 用例【用户注册】开始测试
+2023-05-16 11:33:25,617 - Abs测试报告 - INFO - 用例【用户注册】状态码断言成功
+2023-05-16 11:33:25,617 - Abs测试报告 - ERROR - 用例【用户注册】响应数据断言失败
+Traceback (most recent call last):
+  File "D:\learnpython\autoTest\testcases\base_cases.py", line 108, in assert_json_response
+    self.assertEqual(self.case['expect'], res)
+  File "C:\Program Files\Python310\lib\unittest\case.py", line 845, in assertEqual
+    assertion_func(first, second, msg=msg)
+  File "C:\Program Files\Python310\lib\unittest\case.py", line 1144, in assertDictEqual
+    self.fail(self._formatMessage(msg, standardMsg))
+  File "C:\Program Files\Python310\lib\unittest\case.py", line 675, in fail
+    raise self.failureException(msg)
+AssertionError: {'code': 0, 'msg': 'OK'} != {'code': 2, 'msg': '账号已存在'}
+- {'code': 0, 'msg': 'OK'}
+?          ^          ^^
+
++ {'code': 2, 'msg': '账号已存在'}
+?          ^          ^^^^^
+
+2023-05-16 11:33:25,618 - Abs测试报告 - DEBUG - 实际结果是{'code': 2, 'msg': '账号已存在'}
+2023-05-16 11:33:25,618 - Abs测试报告 - DEBUG - 预期结果是{'code': 0, 'msg': 'OK'}
+2023-05-16 11:33:25,618 - Abs测试报告 - INFO - 用例【用户登录】开始测试
+2023-05-16 11:33:25,618 - Abs测试报告 - INFO - 用例【用户登录】开始测试
+2023-05-16 11:33:25,686 - Abs测试报告 - INFO - 用例【用户登录】状态码断言成功
+2023-05-16 11:33:25,686 - Abs测试报告 - INFO - 用例【用户登录】响应数据断言成功
+2023-05-16 11:33:25,686 - Abs测试报告 - INFO - 用例【用户登录】测试结束
+2023-05-16 11:33:25,686 - Abs测试报告 - INFO - 用例【用户充值】开始测试
+2023-05-16 11:33:25,686 - Abs测试报告 - INFO - 用例【用户充值】开始测试
+2023-05-16 11:33:25,728 - Abs测试报告 - INFO - 用例【用户充值】状态码断言成功
+2023-05-16 11:33:25,728 - Abs测试报告 - INFO - 用例【用户充值】响应数据断言成功
+2023-05-16 11:33:25,728 - Abs测试报告 - INFO - 用例【用户充值】测试结束
+2023-05-16 11:33:25,728 - Abs测试报告 - INFO - **********贷款主流程接口测试结束**********
+2023-05-16 11:33:25,728 - Abs测试报告 - INFO - ----------贷款主流程接口测试开始----------
+2023-05-16 11:33:25,729 - Abs测试报告 - INFO - 用例【注册】开始测试
+2023-05-16 11:33:25,729 - Abs测试报告 - INFO - 用例【注册】开始测试
+2023-05-16 11:33:25,798 - Abs测试报告 - INFO - 用例【注册】状态码断言成功
+2023-05-16 11:33:25,798 - Abs测试报告 - INFO - 用例【注册】响应数据断言成功
+2023-05-16 11:33:25,798 - Abs测试报告 - INFO - 用例【注册】测试结束
+2023-05-16 11:33:25,798 - Abs测试报告 - INFO - 用例【登录】开始测试
+2023-05-16 11:33:25,798 - Abs测试报告 - INFO - 用例【登录】开始测试
+2023-05-16 11:33:25,865 - Abs测试报告 - INFO - 用例【登录】状态码断言成功
+2023-05-16 11:33:25,866 - Abs测试报告 - INFO - 用例【登录】响应数据断言成功
+2023-05-16 11:33:25,866 - Abs测试报告 - INFO - 用例【登录】测试结束
+2023-05-16 11:33:25,867 - Abs测试报告 - INFO - 用例【充值】开始测试
+2023-05-16 11:33:25,867 - Abs测试报告 - INFO - 用例【充值】开始测试
+2023-05-16 11:33:25,918 - Abs测试报告 - INFO - 用例【充值】状态码断言成功
+2023-05-16 11:33:25,918 - Abs测试报告 - INFO - 用例【充值】响应数据断言成功
+2023-05-16 11:33:25,918 - Abs测试报告 - INFO - 用例【充值】测试结束
+2023-05-16 11:33:25,918 - Abs测试报告 - INFO - **********贷款主流程接口测试结束**********
+2023-05-16 11:33:25,918 - Abs测试报告 - INFO - ----------充值接口测试开始----------
+2023-05-16 11:33:26,024 - Abs测试报告 - INFO - 注册成功
+2023-05-16 11:33:26,024 - Abs测试报告 - INFO - 注册用户15601665487成功
+2023-05-16 11:33:26,125 - Abs测试报告 - INFO - 登录成功
+2023-05-16 11:33:26,126 - Abs测试报告 - INFO - 用例【充值成功-整数】开始测试
+2023-05-16 11:33:26,126 - Abs测试报告 - INFO - 用例【充值成功-整数】开始测试
+2023-05-16 11:33:26,169 - Abs测试报告 - INFO - 用例【充值成功-整数】状态码断言成功
+2023-05-16 11:33:26,169 - Abs测试报告 - INFO - 用例【充值成功-整数】响应数据断言成功
+2023-05-16 11:33:26,169 - Abs测试报告 - INFO - 用例【充值成功-整数】测试结束
+2023-05-16 11:33:26,169 - Abs测试报告 - INFO - 用例【充值成功-一位小数】开始测试
+2023-05-16 11:33:26,169 - Abs测试报告 - INFO - 用例【充值成功-一位小数】开始测试
+2023-05-16 11:33:26,215 - Abs测试报告 - INFO - 用例【充值成功-一位小数】状态码断言成功
+2023-05-16 11:33:26,215 - Abs测试报告 - INFO - 用例【充值成功-一位小数】响应数据断言成功
+2023-05-16 11:33:26,215 - Abs测试报告 - INFO - 用例【充值成功-一位小数】测试结束
+2023-05-16 11:33:26,215 - Abs测试报告 - INFO - 用例【充值成功-两位小数】开始测试
+2023-05-16 11:33:26,216 - Abs测试报告 - INFO - 用例【充值成功-两位小数】开始测试
+2023-05-16 11:33:26,260 - Abs测试报告 - INFO - 用例【充值成功-两位小数】状态码断言成功
+2023-05-16 11:33:26,261 - Abs测试报告 - INFO - 用例【充值成功-两位小数】响应数据断言成功
+2023-05-16 11:33:26,261 - Abs测试报告 - INFO - 用例【充值成功-两位小数】测试结束
+2023-05-16 11:33:26,261 - Abs测试报告 - INFO - **********充值接口测试结束**********
+2023-05-16 11:33:26,261 - Abs测试报告 - INFO - ----------注册接口测试开始----------
+2023-05-16 11:33:26,261 - Abs测试报告 - INFO - 用例【注册成功-不带昵称和类型】开始测试
+2023-05-16 11:33:26,261 - Abs测试报告 - INFO - 用例【注册成功-不带昵称和类型】开始测试
+2023-05-16 11:33:26,331 - Abs测试报告 - INFO - 用例【注册成功-不带昵称和类型】状态码断言成功
+2023-05-16 11:33:26,331 - Abs测试报告 - ERROR - 用例【注册成功-不带昵称和类型】响应数据断言失败
+Traceback (most recent call last):
+  File "D:\learnpython\autoTest\testcases\base_cases.py", line 108, in assert_json_response
+    self.assertEqual(self.case['expect'], res)
+  File "C:\Program Files\Python310\lib\unittest\case.py", line 845, in assertEqual
+    assertion_func(first, second, msg=msg)
+  File "C:\Program Files\Python310\lib\unittest\case.py", line 1144, in assertDictEqual
+    self.fail(self._formatMessage(msg, standardMsg))
+  File "C:\Program Files\Python310\lib\unittest\case.py", line 675, in fail
+    raise self.failureException(msg)
+AssertionError: {'code': '0', 'msg': 'OK'} != {'code': 2, 'msg': '账号已存在'}
+- {'code': '0', 'msg': 'OK'}
+?          ^^^          ^^
+
++ {'code': 2, 'msg': '账号已存在'}
+?          ^          ^^^^^
+
+2023-05-16 11:33:26,332 - Abs测试报告 - DEBUG - 实际结果是{'code': 2, 'msg': '账号已存在'}
+2023-05-16 11:33:26,332 - Abs测试报告 - DEBUG - 预期结果是{'code': '0', 'msg': 'OK'}
+2023-05-16 11:33:26,333 - Abs测试报告 - INFO - 用例【注册成功-带昵称-类型为0】开始测试
+2023-05-16 11:33:26,333 - Abs测试报告 - INFO - 用例【注册成功-带昵称-类型为0】开始测试
+2023-05-16 11:33:26,404 - Abs测试报告 - INFO - 用例【注册成功-带昵称-类型为0】状态码断言成功
+2023-05-16 11:33:26,404 - Abs测试报告 - ERROR - 用例【注册成功-带昵称-类型为0】响应数据断言失败
+Traceback (most recent call last):
+  File "D:\learnpython\autoTest\testcases\base_cases.py", line 108, in assert_json_response
+    self.assertEqual(self.case['expect'], res)
+  File "C:\Program Files\Python310\lib\unittest\case.py", line 845, in assertEqual
+    assertion_func(first, second, msg=msg)
+  File "C:\Program Files\Python310\lib\unittest\case.py", line 1144, in assertDictEqual
+    self.fail(self._formatMessage(msg, standardMsg))
+  File "C:\Program Files\Python310\lib\unittest\case.py", line 675, in fail
+    raise self.failureException(msg)
+AssertionError: {'code': '0', 'msg': 'OK'} != {'code': 2, 'msg': '账号已存在'}
+- {'code': '0', 'msg': 'OK'}
+?          ^^^          ^^
+
++ {'code': 2, 'msg': '账号已存在'}
+?          ^          ^^^^^
+
+2023-05-16 11:33:26,405 - Abs测试报告 - DEBUG - 实际结果是{'code': 2, 'msg': '账号已存在'}
+2023-05-16 11:33:26,405 - Abs测试报告 - DEBUG - 预期结果是{'code': '0', 'msg': 'OK'}
+2023-05-16 11:33:26,405 - Abs测试报告 - INFO - 用例【注册成功-带昵称-类型为1】开始测试
+2023-05-16 11:33:26,406 - Abs测试报告 - INFO - 用例【注册成功-带昵称-类型为1】开始测试
+2023-05-16 11:33:26,476 - Abs测试报告 - INFO - 用例【注册成功-带昵称-类型为1】状态码断言成功
+2023-05-16 11:33:26,477 - Abs测试报告 - ERROR - 用例【注册成功-带昵称-类型为1】响应数据断言失败
+Traceback (most recent call last):
+  File "D:\learnpython\autoTest\testcases\base_cases.py", line 108, in assert_json_response
+    self.assertEqual(self.case['expect'], res)
+  File "C:\Program Files\Python310\lib\unittest\case.py", line 845, in assertEqual
+    assertion_func(first, second, msg=msg)
+  File "C:\Program Files\Python310\lib\unittest\case.py", line 1144, in assertDictEqual
+    self.fail(self._formatMessage(msg, standardMsg))
+  File "C:\Program Files\Python310\lib\unittest\case.py", line 675, in fail
+    raise self.failureException(msg)
+AssertionError: {'code': '0', 'msg': 'OK'} != {'code': 2, 'msg': '账号已存在'}
+- {'code': '0', 'msg': 'OK'}
+?          ^^^          ^^
+
++ {'code': 2, 'msg': '账号已存在'}
+?          ^          ^^^^^
+
+2023-05-16 11:33:26,477 - Abs测试报告 - DEBUG - 实际结果是{'code': 2, 'msg': '账号已存在'}
+2023-05-16 11:33:26,477 - Abs测试报告 - DEBUG - 预期结果是{'code': '0', 'msg': 'OK'}
+2023-05-16 11:33:26,478 - Abs测试报告 - INFO - **********注册接口测试结束**********

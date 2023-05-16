@@ -1,6 +1,8 @@
 import json
 import unittest
 import jsonpath
+import requests
+
 from common import logger, db
 import settings
 from common.make_requests import send_http_request
@@ -12,6 +14,7 @@ class BaseCase(unittest.TestCase):
     db = db
     logger = logger
     settings = settings
+    session = requests.Session
 
     @classmethod
     def setUpClass(cls) -> None:
@@ -65,14 +68,16 @@ class BaseCase(unittest.TestCase):
             self.logger.debug('expect:{}'.format(self.case['expect']))
             raise ValueError('用例【{}】数据格式有误'.format(self.case['title']))
         # 1.5拼接url
-        self.case['url'] = self.settings.PROJECT_HOST + self.settings.INTERFACES[self.case['url']]
+        # 判断是否需要拼接url,如果路径以http开头则不需要拼接
+        if not self.case['url'].startswith('http'):
+            self.case['url'] = self.settings.PROJECT_HOST + self.settings.INTERFACES[self.case['url']]
 
     def step(self):
         """
         测试步骤
         """
         try:
-            self.response = send_http_request(url=self.case['url'], method=self.case['method'], **self.case['request'])
+            self.response = self.send_http_request(url=self.case['url'], method=self.case['method'], **self.case['request'])
         except Exception as e:
             self.logger.error('用例【{}】发送请求失败'.format(self.case['title']))
             self.logger.debug('请求参数是{}'.format(self.case['request']))
@@ -139,3 +144,16 @@ class BaseCase(unittest.TestCase):
                     setattr(self.__class__, name, res[0])
                 else:
                     raise ValueError('用例【{}】提取表达式【{}】失败'.format(self.case['title'], exp))
+
+    def send_http_request(self, url, method, **kwargs):
+        """
+        发送http请求
+        :param url: 请求地址
+        :param method: 请求方法
+        :param kwargs: 请求参数
+        :return: 响应对象
+        """
+        # 将请求方法转换为小写
+        method = method.lower()
+        # 获取到对应的请求方法
+        return getattr(self.session, method)(url, **kwargs)
